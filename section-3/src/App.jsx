@@ -1,6 +1,5 @@
 import CoreConcept from "./components/CoreConcept.jsx";
 import Header from "./components/Header.jsx";
-import componentsIMG from "./assets/components.png";
 import { CORE_CONCEPTS } from "./data.js";
 
 function App() {
