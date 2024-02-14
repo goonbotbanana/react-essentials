@@ -8,11 +8,11 @@
 // }
 
 // same thing using destructuring
-function TabButton({ children }) {
+function TabButton({ children, onSelect }) {
   return (
     <li>
       {/* // children refers to the text wrapped by the TabButton components */}
-      <button>{children}</button>
+      <button onClick={onSelect}>{children}</button>
     </li>
   );
 }
