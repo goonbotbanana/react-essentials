@@ -2,16 +2,24 @@ import CoreConcept from "./components/CoreConcept.jsx";
 import Header from "./components/Header/Header.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 import TabButton from "./components/TabButton.jsx";
+import { useState } from "react";
 
 function App() {
+  const [selectedTopic, setSelectedTopic] = useState("Please click a button"); //destructured
+  // initial value = Please click a button
+  // selectedTopic = current state value
+  // setSelectedTopic = state updating function, updates stored value and tells react to re-execute the component
+
+  console.log("app component executed");
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
     console.log(`${selectedButton} selected!`);
+    setSelectedTopic(selectedButton);
   }
 
   return (
     <div>
-      {/* <Header />
+      {/* <Header /> 
       or write like this: */}
       <Header></Header>
       <main>
@@ -41,7 +49,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          Dynamic Content
+          {selectedTopic}
         </section>
       </main>
     </div>
