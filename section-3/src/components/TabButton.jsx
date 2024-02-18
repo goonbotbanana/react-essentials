@@ -9,6 +9,7 @@
 
 // same thing using destructuring
 function TabButton({ children, onSelect }) {
+  console.log("tabButton component executed");
   return (
     <li>
       {/* // children refers to the text wrapped by the TabButton components */}
