@@ -8,12 +8,14 @@
 // }
 
 // same thing using destructuring
-function TabButton({ children, onSelect }) {
+function TabButton({ children, onSelect, isSelected }) {
   console.log("tabButton component executed");
   return (
     <li>
       {/* // children refers to the text wrapped by the TabButton components */}
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }
