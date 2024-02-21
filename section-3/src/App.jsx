@@ -18,6 +18,19 @@ function App() {
     setSelectedTopic(selectedButton);
   }
 
+  let tabContent = <p>Please select a topic.</p>;
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
+
   return (
     <div>
       {/* <Header /> 
@@ -50,8 +63,9 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
+          {/* REPLACED WITH tabContent variable and conditional statement at the top! */}
           {/* if there is no selected topic, render the p, otherwise, render tab content */}
-          {!selectedTopic ? (
+          {/* {!selectedTopic ? (
             <p>Please select a topic.</p>
           ) : (
             <div id="tab-content">
@@ -61,7 +75,8 @@ function App() {
                 <code>{EXAMPLES[selectedTopic].code}</code>
               </pre>
             </div>
-          )}
+          )} */}
+          {tabContent}
         </section>
       </main>
     </div>
