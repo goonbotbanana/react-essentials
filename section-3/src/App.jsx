@@ -54,7 +54,8 @@ function App() {
 
             {/* map produces new array based on existing array, and executes once for every item in the array */}
             {CORE_CONCEPTS.map((conceptItem) => (
-              <CoreConcept {...conceptItem} />
+              // key is required by React for identification of items in lists
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
             ))}
           </ul>
         </section>
